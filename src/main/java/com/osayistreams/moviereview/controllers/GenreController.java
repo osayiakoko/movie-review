@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.osayistreams.moviereview.dto.genre.GenreRequest;
 import com.osayistreams.moviereview.entities.Genre;
@@ -16,8 +17,8 @@ import com.osayistreams.moviereview.services.genre.GenreService;
 
 import lombok.RequiredArgsConstructor;
 
-
-@RequestMapping("v1/genres")
+@RestController
+@RequestMapping("/v1/genres")
 @RequiredArgsConstructor
 public class GenreController {
 
