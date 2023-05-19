@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,6 +44,9 @@ public class Movie {
     private List<Genre> genres;
 
     private LocalDate releaseDate;
+
+    @OneToMany(mappedBy = "movie")
+    private List<Review> reviews;
 
     @Column(nullable = false)
     private Integer ratingCount;
