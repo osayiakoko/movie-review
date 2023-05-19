@@ -1,6 +1,7 @@
 package com.osayistreams.moviereview.entities;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,5 +32,5 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private List<Review> reviews;
+    private Set<Review> reviews = new HashSet<>();
 }

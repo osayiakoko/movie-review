@@ -1,6 +1,7 @@
 package com.osayistreams.moviereview.entities;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,5 +25,5 @@ public class Genre {
     private String name;
 
     @ManyToMany(mappedBy = "genres")
-    private List<Movie> movies;
+    private Set<Movie> movies = new HashSet<>();
 }

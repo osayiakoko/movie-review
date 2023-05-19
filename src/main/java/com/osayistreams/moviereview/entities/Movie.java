@@ -1,7 +1,8 @@
 package com.osayistreams.moviereview.entities;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -41,12 +42,12 @@ public class Movie {
         joinColumns = @JoinColumn(name = "movie_id"),
         inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
-    private List<Genre> genres;
+    private Set<Genre> genres = new HashSet<>();
 
     private LocalDate releaseDate;
 
     @OneToMany(mappedBy = "movie")
-    private List<Review> reviews;
+    private Set<Review> reviews = new HashSet<>();
 
     @Column(nullable = false)
     private Integer ratingCount;
