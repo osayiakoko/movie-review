@@ -36,7 +36,7 @@ public class Movie {
 
     private String posterUrl;
 
-    @ManyToMany(cascade = CascadeType.REMOVE)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
         name = "movie_genre",
         joinColumns = @JoinColumn(name = "movie_id"),
