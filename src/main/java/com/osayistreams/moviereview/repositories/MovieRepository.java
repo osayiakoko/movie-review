@@ -6,5 +6,5 @@ import com.osayistreams.moviereview.entities.Movie;
 
 
 public interface MovieRepository extends JpaRepository<Movie, Integer>{
-    Movie findByTitle(String title);
+
 }

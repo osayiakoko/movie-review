@@ -13,8 +13,6 @@ public interface MovieService {
 
     Movie findById(Integer id);
 
-    Movie findByTitle(String title);
-
     Movie update(Movie movie);
 
     void delete(Integer id);

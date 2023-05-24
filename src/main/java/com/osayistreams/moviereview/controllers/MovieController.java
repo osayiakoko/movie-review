@@ -35,12 +35,8 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public Movie findAMovie(@PathVariable Integer id) {
+    public Movie findMovie(@PathVariable() Integer id) {
         return service.findById(id);
     }
     
-    @GetMapping("/{title}")
-    public Movie findAMovie(@PathVariable String title) {
-        return service.findByTitle(title);
-    }
 }

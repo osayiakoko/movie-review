@@ -57,11 +57,6 @@ public class MovieServiceImpl implements MovieService{
     }
 
     @Override
-    public Movie findByTitle(String title) {
-        return repository.findByTitle(title);
-    }
-
-    @Override
     public Movie update(Movie movie) {
         return repository.save(movie);
     }
