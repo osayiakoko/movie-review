@@ -1,5 +1,6 @@
 package com.osayistreams.moviereview.dto.genre;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,5 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GenreRequest {
+    @NotBlank(message = "Name is required")
     private String name;
 }

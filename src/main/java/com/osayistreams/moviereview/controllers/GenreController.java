@@ -15,6 +15,7 @@ import com.osayistreams.moviereview.dto.genre.GenreRequest;
 import com.osayistreams.moviereview.entities.Genre;
 import com.osayistreams.moviereview.services.genre.GenreService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -25,7 +26,7 @@ public class GenreController {
     private final GenreService service;
 
     @PostMapping
-    public Genre saveGenre(@RequestBody GenreRequest genre) {
+    public Genre saveGenre(@Valid @RequestBody GenreRequest genre) {
         return service.save(
             Genre.builder()
             .name(genre.getName())
